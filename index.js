@@ -191,7 +191,8 @@
             const div = document.createElement('div');
             div.id = 'cs-overlay';
             div.style.cssText = `
-                position:fixed; top:0; left:0; width:100%; height:100%;
+                position:fixed; top:0; left:0; width:100vw; height:100vh;
+                min-height:100vh;
                 background:rgba(0,0,0,0.78);
                 z-index:10000;
                 overflow-y:scroll;
