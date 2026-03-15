@@ -1,0 +1,11 @@
+{
+  "display_name": "Chat Range Summarizer",
+  "loading_order": 10,
+  "requires": [],
+  "optional": [],
+  "js": "index.js",
+  "author": "Custom",
+  "version": "1.0.0",
+  "homePage": "",
+  "auto_update": false
+}
