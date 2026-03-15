@@ -191,10 +191,11 @@
             const div = document.createElement('div');
             div.id = 'cs-overlay';
             div.style.cssText = `
-                position:fixed; inset:0;
+                position:fixed; top:0; left:0; right:0; bottom:0;
                 background:rgba(0,0,0,0.78);
                 z-index:10000;
-                display:flex; align-items:center; justify-content:center;
+                overflow-y:auto;
+                -webkit-overflow-scrolling:touch;
                 padding:16px; box-sizing:border-box;`;
 
             div.innerHTML = `
@@ -203,7 +204,7 @@
                 border:1px solid var(--SmartThemeBorderColor, #555);
                 border-radius:10px; padding:20px;
                 max-width:620px; width:100%;
-                max-height:85vh; overflow-y:auto;
+                margin:40px auto 40px auto;
                 box-sizing:border-box;">
                 <h3 style="margin:0 0 6px; font-size:1.05em;">📋 Summary Preview</h3>
                 <p style="font-size:0.82em; color:var(--SmartThemeQuoteColor); margin:0 0 12px;">
@@ -213,16 +214,16 @@
                     Edit freely before applying.
                 </p>
                 <textarea id="cs-ta" style="
-                    width:100%; height:220px; box-sizing:border-box;
+                    width:100%; height:180px; box-sizing:border-box;
                     background:var(--SmartThemeBlurTintColor, #111);
                     color:var(--SmartThemeBodyColor, #eee);
                     border:1px solid var(--SmartThemeBorderColor, #555);
                     border-radius:6px; padding:10px;
                     font-family:inherit; font-size:0.93em;
                     resize:vertical;">${summary}</textarea>
-                <div style="display:flex; gap:10px; margin-top:14px; justify-content:flex-end;">
-                    <button id="cs-cancel" class="menu_button" style="padding:7px 18px;">Cancel</button>
-                    <button id="cs-apply"  class="menu_button" style="padding:7px 18px;">✓ Apply</button>
+                <div style="display:flex; gap:10px; margin-top:14px; justify-content:flex-end; flex-wrap:wrap;">
+                    <button id="cs-cancel" class="menu_button" style="padding:10px 22px; font-size:1em; flex:1;">Cancel</button>
+                    <button id="cs-apply"  class="menu_button" style="padding:10px 22px; font-size:1em; flex:1;">✓ Apply</button>
                 </div>
             </div>`;
 
